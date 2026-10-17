@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Host screen - Halloween Office Trivia</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%83%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="host">
+    <header class="host-head">
+      <h1>Halloween Office Trivia</h1>
+      <p class="status" role="status"><span id="conn-dot" class="dot wait"></span><span id="conn-text">Connecting</span></p>
+    </header>
+
+    <aside class="memo">
+      <h2>Scan to join the game</h2>
+      <img id="qr" src="/qr.svg" alt="QR code that opens the join page" width="320" height="320">
+      <p>Or type this address into a phone browser:</p>
+      <p id="join-url" class="url"></p>
+    </aside>
+
+    <section aria-labelledby="players-heading">
+      <div class="panel-top">
+        <h2 id="players-heading" class="count"><span id="count">0</span><small id="count-sub">players here</small></h2>
+        <div class="actions">
+          <button id="buzz" class="btn" type="button">Send test buzz</button>
+          <button id="lock" class="btn quiet" type="button">Lock the game</button>
+        </div>
+      </div>
+      <p id="buzz-summary" class="buzz-summary" aria-live="polite"></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Player</th>
+            <th scope="col" class="num">Round trip</th>
+            <th scope="col" class="num">Buzz reply</th>
+            <th scope="col"><span class="sr">Remove</span></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p id="empty" class="empty">Nobody has joined yet. Scan the code with a phone.</p>
+    </section>
+  </main>
+
+  <script src="/static/common.js"></script>
+  <script src="/static/host.js"></script>
+</body>
+</html>

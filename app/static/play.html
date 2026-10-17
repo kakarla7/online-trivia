@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#170d27">
+  <title>Halloween Office Trivia</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%83%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="phone">
+    <noscript><p class="lead">This game needs JavaScript. Turn it on in your browser settings.</p></noscript>
+
+    <section id="screen-join">
+      <form id="join-form" class="stack" autocomplete="off">
+        <h1>Halloween Office Trivia</h1>
+        <p class="lead">Pick a name your coworkers will recognize.</p>
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" type="text" maxlength="20" autocomplete="nickname" autocapitalize="words" enterkeyhint="go" required>
+        </div>
+        <p id="join-error" class="error" role="alert"></p>
+        <button id="join-btn" class="btn" type="submit">Join the game</button>
+      </form>
+    </section>
+
+    <section id="screen-lobby" hidden>
+      <h1>You're in, <span id="me"></span></h1>
+      <p class="lead">Keep this page open. The host will start the first round.</p>
+      <div class="card">
+        <p class="status"><span id="status-dot" class="dot wait"></span><span id="status-text">Connecting</span></p>
+        <p>Round trip to the game: <span id="rtt" class="ping">-</span></p>
+      </div>
+      <p id="buzz-note" class="buzz-note" aria-live="polite"></p>
+      <button id="leave" class="btn quiet" type="button">Leave the game</button>
+    </section>
+
+    <section id="screen-blocked" hidden>
+      <h1 id="blocked-title"></h1>
+      <p id="blocked-text" class="lead"></p>
+      <button id="blocked-back" class="btn" type="button">Back to join</button>
+    </section>
+  </main>
+
+  <script src="/static/common.js"></script>
+  <script src="/static/play.js"></script>
+</body>
+</html>
